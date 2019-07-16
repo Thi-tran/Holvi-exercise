@@ -1,0 +1,37 @@
+.wrapper
+    text-align: center
+
+
+.button 
+    margin-top: 20px
+
+
+%button-shared
+    padding: 10px 40px
+    border-radius: 6px
+    border: 0ch
+    font-size: 25px
+    margin: 10px 20px
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
+    padding: 1rem 2rem
+    cursor: pointer
+    transition: all 0.3s ease 0s
+    color: #fff
+
+
+
+.listingbutton 
+    @extend %button-shared
+    background-color: #0fbcf9
+
+.listingbutton:hover
+    background-color: #06a7e0
+
+.standingbutton
+    @extend %button-shared
+    background-color: #f31b3b
+
+.standingbutton:hover
+    background-color: #d00b28
+
+

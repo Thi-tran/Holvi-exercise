@@ -1,0 +1,50 @@
+.info
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(#000, .15)
+    padding: 1.5rem 
+    border-radius: 5px
+    width: 25%
+
+
+ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+
+li
+    display: block
+    text-decoration: none
+    margin: 1rem 0
+
+.chart-container
+    width: 80%
+    float: right
+    height: 200px
+
+.info-container 
+    display: flex
+    zoom: 1
+
+@media (max-width: 1023px) 
+    .info-container
+        display: block
+        width: 100%
+
+    .info
+        width: 50%
+        margin: 0 auto
+        margin-bottom: 2rem
+    
+    .chart 
+        width: 100%
+
+    .chart-container
+        float: none
+        margin: 0 auto
+
+@media (max-width: 767px) 
+    .info
+        width: 90%    
+
+    .chart, .chart-container
+        width: 100%

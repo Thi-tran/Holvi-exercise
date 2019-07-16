@@ -1,0 +1,11 @@
+<div class="body">
+    <h2 mat-dialog-title>
+        Team {{this.teamInfo.team}}
+    </h2>
+    <button class="exitbutton" (click)="Close($event)"><i (click)="Close($event)" class="fas fa-times"></i></button>
+    
+    <div class="rankingcontainer" [ngStyle]="{'color': '#fff', 'text-align': 'center'}">
+        <div class="teamInfo">Team ID: {{this.teamInfo.id}}</div>
+        <div class="teamInfo">Car: {{this.teamInfo.car}}</div>
+    </div>
+</div>

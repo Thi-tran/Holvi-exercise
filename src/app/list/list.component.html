@@ -1,0 +1,20 @@
+<div>                          
+    <div class="table-wrapper">
+        <table width="100%">
+            <tr class="table-wrapper__header">
+                <th (click)="OrderBy('driver')">Driver</th>
+                <th (click)="OrderBy('country')">Country</th>
+                <th (click)="OrderBy('team')">Team</th>
+            </tr>
+            <tr *ngFor="let driver of this.drivers " class="table-wrapper__content">
+                <td>{{driver.driver}}</td>
+                <td>{{driver.country | uppercase}}</td>
+                <td>{{driver.team}} 
+                    <span (click)="OpenTeamInfo(driver.team)">
+                        <img src="https://image.flaticon.com/icons/svg/65/65578.svg" [ngStyle]="{'height': '15px'}" class="blink_icon"/>
+                    </span>
+                </td>
+            </tr>
+        </table> 
+    </div>
+</div> 

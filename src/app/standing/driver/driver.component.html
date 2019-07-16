@@ -1,0 +1,17 @@
+<div [ngStyle]="{'width': '80%', 'margin': '0 auto'}" class="info-container">
+    <div class="span-1-of-3 info">
+        <h3 [ngStyle]="{'margin-top': 0}">{{this.driver.driver}}</h3>
+        <ul>
+            <li><span>Country </span> {{this.driver.country | uppercase}}</li>
+            <li>Point {{this.driver.points}}</li>
+            <li>Team {{this.team.team}} (ID: {{this.team.id}})</li>
+            <li>Car  {{this.team.car}}</li>        
+        </ul>
+    </div>
+
+    <div *ngIf="chart" class="span-2-of-3 chart">
+        <div class="chart-container">
+            <canvas id="canvas">{{chart}}</canvas>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+
+table
+    border-collapse: collapse
+
+
+.center
+    text-align: center
+
+.table-wrapper
+    display: flex
+    justify-content: center
+    box-shadow: 0.5rem 0.5rem 2rem 0.5rem rgba(#000, .15)
+    padding: 1rem
+    border-radius: 5px
+    width: 60%
+    margin: 0 auto
+    margin-bottom: 1rem
+    &__header
+        font-size: 20px
+
+.mat-header-cell
+    color: grey
+    font-size: 17px
+
+.mat-cell
+    color: grey
+
+tr 
+    text-align: left
+
+th, td 
+    padding: 1rem
+    border-bottom: 1px solid #919191
+tr 
+    th 
+        cursor: pointer
+
+
+@media (max-width: 767px)
+    .table-wrapper
+        width: 80%
