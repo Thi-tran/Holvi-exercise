@@ -3,10 +3,10 @@ import { TeamService } from 'src/app/team.service';
 import { DriverService } from './../../driver.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { Observable, Subscription } from 'rxjs';
+import { switchMap, tap, concatMap, mergeMap, map } from 'rxjs/operators';
 import { IDriver } from 'src/app/model/driver';
-import {Chart} from 'chart.js';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-driver',
@@ -23,6 +23,8 @@ export class DriverComponent implements OnInit {
   }
   observable: Observable<IDriver[]>;
   public chart = []
+  private subscription: Subscription;
+
   constructor(  
     private route: ActivatedRoute,
     private _driverService: DriverService,
@@ -33,11 +35,11 @@ export class DriverComponent implements OnInit {
   ngOnInit() {
     let id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this._driverService.getDrivers().pipe(
+    this.subscription = this._driverService.getDrivers().pipe(
       tap(driver => this.driver = driver[id]),
       tap(driver => this.team_drivers = driver.filter(item => item.team === driver[id].team)),
-      switchMap(result => this._teamService.getTeamByID(result[id].team)),
-    ).subscribe(
+      switchMap(result => this._teamService.getTeamByID(result[id].team)))
+      .subscribe(
       result2 => {
         this.team = result2[0];  
         let names = this.team_drivers.map(res => res.driver);
@@ -79,5 +81,10 @@ export class DriverComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 }
