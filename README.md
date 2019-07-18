@@ -1,6 +1,6 @@
 # Racing Game
 
-From the exercise of Carlos, I decided to make the application as a game so that it makes the app real to the user
+From the exercise of Carlos, I decided to make the application as a game so that it makes the app become quite real to the user
 - In Listing View, user will see the list of players from the table (hard-coded). When user click to the flag, their team info will show up in a Dialog. 
 - In Standing View, user will see the current standing of players in and their points (using chartJS). There is interval every 1 second running in the background so the chart will automatically update, which gives you a real feeling of watching a real racing game. 
 - When user click in a player from Standing View, the view for driver's information will show up with information about the driver and its team points. 
