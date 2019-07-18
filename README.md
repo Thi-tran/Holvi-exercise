@@ -1,4 +1,4 @@
-# RaceGame
+# Racing Game
 
 From the exercise of Carlos, I decided to make the application as a game. 
 - In Listing View, user will see the list of players from the table (hard-coded). When user click to the flag, their team info will show up in a Dialog. 
